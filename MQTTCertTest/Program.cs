@@ -41,7 +41,7 @@ MqttClientOptionsBuilderTlsParameters GetBuildTlsOptions()
     MqttClientOptionsBuilderTlsParameters p = new MqttClientOptionsBuilderTlsParameters();
     p.UseTls = true;
     p.CertificateValidationHandler = ValidateCert;
-    p.IgnoreCertificateRevocationErrors = true;
+    p.IgnoreCertificateRevocationErrors = true;    
     return p;
 }
 
@@ -58,6 +58,21 @@ IMqttClientOptions? connectOptions = (new MqttClientOptionsBuilder())
     //.WithKeepAlivePeriod(TimeSpan.FromMilliseconds(1500))
     //.WithKeepAliveSendInterval(TimeSpan.FromMilliseconds(200))
     .Build();
+
+///// <summary>
+///// Create connect options for MQTT
+///// </summary>
+//IMqttClientOptions? connectOptions = (new MqttClientOptionsBuilder())
+//    .WithTls(GetBuildTlsOptions())
+//    .WithWebSocketServer(broker)
+//    .WithCredentials(userid, password)
+//    //.WithTcpServer(broker)
+//    .WithClientId(clientId)
+//    //.WithProtocolVersion(MQTTnet.Formatter.MqttProtocolVersion.V310)
+//    //.WithCommunicationTimeout(TimeSpan.FromMinutes(30))
+//    //.WithKeepAlivePeriod(TimeSpan.FromMilliseconds(1500))
+//    //.WithKeepAliveSendInterval(TimeSpan.FromMilliseconds(200))    
+//    .Build();
 
 // main program
 CancellationToken cancellationToken = CancellationToken.None;

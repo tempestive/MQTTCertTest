@@ -266,3 +266,4 @@ __pycache__/
 # JVM
 !**/openj9/bin
 
+/MQTTCertTest/Properties/launchSettings.json
